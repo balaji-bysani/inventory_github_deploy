@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import basestyle from "../Base.module.css";
+import basestyle from "../../Base.module.css";
 import loginstyle from "./Login.module.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -16,23 +16,23 @@ export default function Login({setUserState})
     });
     const [isSubmit, setisSubmit] =useState(false);
 
-    function handleValueChange (e)
+    const handleValueChange =(e)=>
     {
-        [id,value]=e.target();
+        const {id,value}=e.target();
         setUser({
             ...user,
             [id]:value,
     })
     }
 
-    function handleSubmit()
+    const handleSubmit =(e) =>
     {
        e.preventDefault();
         setFormErrors(validateForm(user));
        setisSubmit(true);
     }
 
-    function validateForm(values)
+    const validateForm =(values)=>
     {
         const error={};
         const regex = /^[^\s+@]+@[^\s@]+\.[^\s@]{2,}$/i;

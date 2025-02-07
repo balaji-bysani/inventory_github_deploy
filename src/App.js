@@ -3,7 +3,7 @@ import './App.css';
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useStateContext } from './contexts/ContextProvider';
-import Login from "./Components/login";
+import Login from "./Components/login/login";
 //import Register from './Register/Register';
 function App() {
   const { setCurrentColor, setCurrentMode, currentMode, currentColor, themeSettings, setThemeSettings, activeMenu } = useStateContext();
@@ -44,18 +44,13 @@ function App() {
             <Routes>
               <Route  path="/"
                   element={
-                    userstate && userstate._id ? (
-                      <Profile
-                        setUserState={setUserState}
-                        username={userstate.fname}
-                      />
-                    ) : (
+                    (
                       <Login setUserState={setUserState} />
                     )
                   }> </Route>
 
                 <Route path="/login" element={<Login setUserState={setUserState}></Login>}></Route>
-                <Route path="/signup" element={<Register/>}></Route>
+                
             </Routes>
           </div>
       </div>
