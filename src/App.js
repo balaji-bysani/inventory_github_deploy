@@ -1,12 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useStateContext } from './contexts/ContextProvider';
+import Login from "./Components/login";
+//import Register from './Register/Register';
 function App() {
   const { setCurrentColor, setCurrentMode, currentMode, currentColor, themeSettings, setThemeSettings, activeMenu } = useStateContext();
   const isHomePage = window.location.pathname === '/';
   const isLoginPage = window.location.pathname === '/login';
   const isSignupPage = window.location.pathname === '/signup';
-
+  const [userstate, setUserState] = useState({});
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
     const currentThemeMode = localStorage.getItem('themeMode');
