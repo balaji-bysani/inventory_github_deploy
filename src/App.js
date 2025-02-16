@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
-    <Login setUserState={setUserState} />
+
     </div>
   );
 }
