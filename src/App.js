@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useStateContext } from './contexts/ContextProvider';
 import Login from "./Components/login/login";
+import Signup from './Components/Register/signup';
 //import Register from './Register/Register';
 function App() {
   // const { setCurrentColor, setCurrentMode, currentMode, currentColor, themeSettings, setThemeSettings, activeMenu } = useStateContext();
@@ -38,7 +39,7 @@ function App() {
           path="/login"
           element={<Login setUserState={setUserState} />}
         ></Route>
-        <Route path="/signup" element={<Login setUserState={setUserState} />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/home" element={<Login setUserState={setUserState} />} />
       </Routes>
       </HashRouter>

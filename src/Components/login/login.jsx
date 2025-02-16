@@ -109,7 +109,7 @@ export default function Login({setUserState})
             <p className={basestyle.error}>{formErrors.password}</p>
             
             <button className={`${basestyle.button_common} `} onClick={handleSubmit}> Submit</button>
-            
+            <NavLink to="/signup">Not yet registered? Register Now</NavLink>
         </form>
         </div>
     </div>);
