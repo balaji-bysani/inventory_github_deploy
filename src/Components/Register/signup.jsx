@@ -79,7 +79,7 @@ export default function Signup()
     useEffect(() => {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
           // Simulate database registration success
-          alert("Registration successful!");
+          toast.success("Registration successful!");
           navigate("/login", { replace: true });
         }
       }, [formErrors, isSubmit]);
