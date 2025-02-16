@@ -10,7 +10,7 @@ function App() {
   // const isHomePage = window.location.pathname === '/';
   // const isLoginPage = window.location.pathname === '/login';
   // const isSignupPage = window.location.pathname === '/signup';
-  // const [userstate, setUserState] = useState({});
+   const [userstate, setUserState] = useState({});
   // useEffect(() => {
   //   const currentThemeColor = localStorage.getItem('colorMode');
   //   const currentThemeMode = localStorage.getItem('themeMode');
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div >
-       hi
+       <Login setUserState={setUserState} />
     </div>
   );
 }
