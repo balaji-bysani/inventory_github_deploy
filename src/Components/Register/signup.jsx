@@ -140,7 +140,7 @@ export default function Signup()
                     >
                     </input>
                     <p className={basestyle.error}>{formErrors.cpassword}</p>
-                   <button className={basestyle.button_common} onSubmit={handleSubmit}>Submit</button>
+                   <button className={basestyle.button_common} onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
         </div>
