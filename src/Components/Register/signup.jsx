@@ -27,6 +27,7 @@ export default function Signup()
           navigate("/login", { replace: true });
         }
       }, [formErrors, isSubmit]);
+      
     function handleChange(e)
     {
         const {name,value}=e.target;
@@ -114,7 +115,7 @@ export default function Signup()
                     <input
                     name="email"
                     id="email"
-                    placeholder="Last Name"
+                    placeholder="Email"
                     type="email"
                     value={user.email}
                     onChange={handleChange}
