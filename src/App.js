@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useStateContext } from './contexts/ContextProvider';
 import Login from "./Components/login/login";
 //import Register from './Register/Register';
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div >
-      <BrowserRouter>
+      <HashRouter>
       <Routes>
       <Route
           path="/"
@@ -41,7 +41,7 @@ function App() {
         <Route path="/signup" element={<Login setUserState={setUserState} />} />
         <Route path="/home" element={<Login setUserState={setUserState} />} />
       </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
