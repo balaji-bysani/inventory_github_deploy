@@ -30,7 +30,7 @@ export default function Signup()
         );
     };
 
-    function handleSubmit()
+    function handleSubmit(e)
     { 
         e.preventDefault();
         setFormErrors(validateForm(user))
