@@ -40,7 +40,7 @@ export default function Login({setUserState})
         {
             error.email="Email is required";
         }
-        else if (regex.test(values.email))
+        else if (!regex.test(values.email))
         {
             error.email="Enter valid email";
         }
