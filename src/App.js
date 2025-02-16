@@ -6,19 +6,19 @@ import { useStateContext } from './contexts/ContextProvider';
 import Login from "./Components/login/login";
 //import Register from './Register/Register';
 function App() {
-  const { setCurrentColor, setCurrentMode, currentMode, currentColor, themeSettings, setThemeSettings, activeMenu } = useStateContext();
-  const isHomePage = window.location.pathname === '/';
-  const isLoginPage = window.location.pathname === '/login';
-  const isSignupPage = window.location.pathname === '/signup';
-  const [userstate, setUserState] = useState({});
-  useEffect(() => {
-    const currentThemeColor = localStorage.getItem('colorMode');
-    const currentThemeMode = localStorage.getItem('themeMode');
-    if (currentThemeColor && currentThemeMode) {
-      setCurrentColor(currentThemeColor);
-      setCurrentMode(currentThemeMode);
-    }
-  }, []);
+  // const { setCurrentColor, setCurrentMode, currentMode, currentColor, themeSettings, setThemeSettings, activeMenu } = useStateContext();
+  // const isHomePage = window.location.pathname === '/';
+  // const isLoginPage = window.location.pathname === '/login';
+  // const isSignupPage = window.location.pathname === '/signup';
+  // const [userstate, setUserState] = useState({});
+  // useEffect(() => {
+  //   const currentThemeColor = localStorage.getItem('colorMode');
+  //   const currentThemeMode = localStorage.getItem('themeMode');
+  //   if (currentThemeColor && currentThemeMode) {
+  //     setCurrentColor(currentThemeColor);
+  //     setCurrentMode(currentThemeMode);
+  //   }
+  // }, []);
 
   // const mainContentStyle = {
   //   width: activeMenu && !isLoginPage && !isSignupPage && !isHomePage ? '85%' : '100%', // Adjust the width as needed
@@ -27,8 +27,8 @@ function App() {
   // };
 
   return (
-    <div className={currentMode === 'Dark' ? 'dark' : ''}>
-
+    <div >
+       hi
     </div>
   );
 }
