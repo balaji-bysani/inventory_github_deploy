@@ -35,7 +35,7 @@ export default function Login({setUserState})
     const validateForm =(values)=>
     {
         const error={};
-        const regex = /^[^\s+@]+@[^\s@]+\.[^\s@]{2,}$/i;
+        const regex =/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if(!values.email)
         {
             error.email="Email is required";
