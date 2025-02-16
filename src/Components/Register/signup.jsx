@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import basestyle from "../../Base.module.css";
-import loginstyle from "./Login.module.css";
+import loginstyle from "./Register.module.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, NavLink } from "react-router-dom";
@@ -18,9 +18,10 @@ export default function Signup()
         });
 
     const [formErrors,setFormErrors]=useState({});
+    const [isSubmit,setIsSubmit]=useState(false);
     function handleChange(e)
     {
-        const [name,value]=e.target;
+        const {name,value}=e.target;
         setUser(
             {
                 ...user,
@@ -82,10 +83,10 @@ export default function Signup()
           navigate("/login", { replace: true });
         }
       }, [formErrors, isSubmit]);
-      
+
     return(
-        <div>
-            <div>
+        <div className={`${registerstyle.registerPageContainer} `}>
+            <div className={registerstyle.register}>
                 <h1>Create your accouunt</h1>
                 <form>
                     <input
@@ -97,6 +98,7 @@ export default function Signup()
                     onChange={handleChange}
                     >
                     </input>
+                    <p className={basestyle.error}>{formErrors.fname}</p>
                     <input
                     name="lname"
                     id="lname"
@@ -106,6 +108,7 @@ export default function Signup()
                     onChange={handleChange}
                     >
                     </input>
+                    <p className={basestyle.error}>{formErrors.lname}</p>
                     <input
                     name="email"
                     id="email"
@@ -115,6 +118,7 @@ export default function Signup()
                     onChange={handleChange}
                     >
                     </input>
+                    <p className={basestyle.error}>{formErrors.email}</p>
                     <input
                     name="password"
                     id="password"
@@ -124,6 +128,7 @@ export default function Signup()
                     onChange={handleChange}
                     >
                     </input>
+                    <p className={basestyle.error}>{formErrors.password}</p>
                     <input
                     name="cpassword"
                     id="cpassword"
@@ -133,7 +138,8 @@ export default function Signup()
                     onChange={handleChange}
                     >
                     </input>
-                   <button onClick={handleSubmit}>Submit</button>
+                    <p className={basestyle.error}>{formErrors.cpassword}</p>
+                   <button className={basestyle.button_common} onClick={handleSubmit}>Submit</button>
                 </form>
             </div>
         </div>
