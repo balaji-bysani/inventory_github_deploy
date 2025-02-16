@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import basestyle from "../../Base.module.css";
-import loginstyle from "./Register.module.css";
+import registerstyle from "./Register.module.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate, NavLink } from "react-router-dom";
@@ -16,7 +16,7 @@ export default function Signup()
             password:"",
             cpassword:"",
         });
-
+    const navigate=useNavigate();
     const [formErrors,setFormErrors]=useState({});
     const [isSubmit,setIsSubmit]=useState(false);
     function handleChange(e)
@@ -33,7 +33,7 @@ export default function Signup()
     function handleSubmit()
     { 
         e.preventDefault();
-        setFormErrors(validateForm(values))
+        setFormErrors(validateForm(user))
         setIsSubmit(true);
     }
     function validateForm(values)
