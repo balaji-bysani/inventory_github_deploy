@@ -7,13 +7,7 @@ import { useNavigate, NavLink } from "react-router-dom";
 
 export default function Signup()
 {
-    useEffect(() => {
-        if (Object.keys(formErrors).length === 0 && isSubmit) {
-          // Simulate database registration success
-          toast.success("Registration successful!");
-          navigate("/login", { replace: true });
-        }
-      }, [formErrors, isSubmit]);
+    
     const [user,setUser]=useState(
         {
             fname : "",
@@ -26,6 +20,13 @@ export default function Signup()
     const navigate=useNavigate();
     const [formErrors,setFormErrors]=useState({});
     const [isSubmit,setIsSubmit]=useState(false);
+    useEffect(() => {
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+          // Simulate database registration success
+          toast.success("Registration successful!");
+          navigate("/login", { replace: true });
+        }
+      }, [formErrors, isSubmit]);
     function handleChange(e)
     {
         const {name,value}=e.target;
