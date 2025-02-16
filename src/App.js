@@ -28,7 +28,20 @@ function App() {
 
   return (
     <div >
-       <Login setUserState={setUserState} />
+      <BrowserRouter>
+      <Routes>
+      <Route
+          path="/"
+          element={<Login setUserState={setUserState} />}
+        ></Route>
+        <Route
+          path="/login"
+          element={<Login setUserState={setUserState} />}
+        ></Route>
+        <Route path="/signup" element={<Login setUserState={setUserState} />} />
+        <Route path="/home" element={<Login setUserState={setUserState} />} />
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

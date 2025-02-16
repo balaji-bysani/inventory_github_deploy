@@ -18,7 +18,7 @@ export default function Login({setUserState})
 
     const handleValueChange =(e)=>
     {
-        const {id,value}=e.target();
+        const {id,value}=e.target;
         setUser({
             ...user,
             [id]:value,
@@ -28,7 +28,7 @@ export default function Login({setUserState})
     const handleSubmit =(e) =>
     {
        e.preventDefault();
-        setFormErrors(validateForm(user));
+    setFormErrors(validateForm(user));
        setisSubmit(true);
     }
 
@@ -38,21 +38,21 @@ export default function Login({setUserState})
         const regex = /^[^\s+@]+@[^\s@]+\.[^\s@]{2,}$/i;
         if(!values.email)
         {
-            error.email("Email is required");
+            error.email="Email is required";
         }
         else if (regex.test(values.email))
         {
-            error.email("Enter valid email");
+            error.email="Enter valid email";
         }
         if(!values.password)
         {
-            error.password("Password is required");
+            error.password="Password is required";
         }
         return error;
     }
     useEffect(()=>
     {
-        if(Object.keys(formErrors).length==0 && isSubmit)
+        if(Object.keys(formErrors).length===0 && isSubmit)
         {
             const Admin = { email: "Admin@gmail.com", password: "admin123" };
             const employee = { email: "employee@gmail.com", password: "employee123" };
@@ -64,13 +64,13 @@ export default function Login({setUserState})
                  setUserState(Admin);
                  navigate("/home",{replace:true})
             }
-            if(user.email === employee.email && user.password === employee.password)
+            else if(user.email === employee.email && user.password === employee.password)
             {
                 setUserState(employee);
                 toast.success("Login Successfull");
                 navigate("/home",{replace:true})
             }
-            if(user.email === developer.email && user.password === developer.password)
+            else if(user.email === developer.email && user.password === developer.password)
             {
                 toast.success("Login Successfull");
                 setUserState(developer);
@@ -78,7 +78,7 @@ export default function Login({setUserState})
             }
             else
             {
-                toast.failure("Login failed");
+                toast.error("Login failed");
             }
 
         }
@@ -105,11 +105,11 @@ export default function Login({setUserState})
             value={user.password}
             onChange={handleValueChange}
             className={loginstyle.loginFormInput}
-            >
+            />
             <p className={basestyle.error}>{formErrors.password}</p>
-            </input>
+            
             <button className={`${basestyle.button_common} `} onClick={handleSubmit}> Submit</button>
-            <NavLink to="/signup">Not yet registered? Register Now</NavLink>
+            
         </form>
         </div>
     </div>);
