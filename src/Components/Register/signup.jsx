@@ -26,7 +26,7 @@ export default function Signup()
           toast.success("Registration successful!");
           navigate("/login", { replace: true });
         }
-      }, [formErrors, isSubmit]);
+      }, [formErrors]);
       
     function handleChange(e)
     {
